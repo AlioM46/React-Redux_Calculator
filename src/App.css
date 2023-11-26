@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 5px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-image: linear-gradient(to right, #6274e7, #8752a3);
+}
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 40px auto;
+  width: 500px;
+  min-height: 650px;
+  border: 2px solid white;
+}
+
+@media screen and (max-width: 550px) {
+  .calc {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+.calc__result {
+  width: 100%;
+  height: 20%;
+  text-align: right;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+  color: white;
+  word-wrap: break-word;
+  word-break: break-all;
+  flex: 1;
+  user-select: none;
+}
+
+.calc__result div:first-child {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.calc__result div:last-child {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.calc__numbers {
+  width: 100%;
+  flex: 1;
+  height: 80%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.calc__numbers > div {
+  background: transparent;
+  border: 1px solid white;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 800;
+  user-select: none;
+  transition: 0.1s;
+}
+
+.calc__numbers > div:hover,
+.calc__numbers > div:focus,
+.calc__numbers > div:active {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.calc__numbers > div:active {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.calc__numbers > div.span-2 {
+  grid-column: span 2;
+}
